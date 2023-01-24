@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Component Library/Forms</title>
+    <link
+      href="C:\Users\lunin\OneDrive\Рабочий стол\css_example\style2.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <style>
+    body {
+    font-family:Arial, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+    }
+  </style>
+  <body>
+
+    <!-- Side navigation -->
+<div class="menu">
+    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Поиск.." title="Введите категорию">
+
+    <ul id="myMenu">
+      <li><a href="index.html">Buttons</a></li>
+      <li><a href="index.2html">Forms</a></li>
+      <li><a href="#">Card</a></li>
+      <li><a href="#">Navs</a></li>
+      <li><a href="#">Progress</a></li>
+    </ul>
+  </div>
+    <script>
+      function myFunction() {
+        
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("mySearch");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myMenu");
+        li = ul.getElementsByTagName("li");
+    
+        for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+          } else {
+            li[i].style.display = "none";
+          }
+        }
+      }
+      </script>
+
+    <!-- topnav -->
+
+    <div class="topnav">
+      <a href="#home">Home</a>
+      <a href="#documentation">Documentation</a>
+      <a href="#examples">Examples</a>
+      <a href="#themes">Themes</a>
+    </div>
+
+    <!-- Page content -->
+
+    <div class="main">
+        <br>
+<h1>Forms</h1>
+<p>Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.</p>
+    <h2>Overview</h2>
+    <p>Form controls expand on our Rebooted form styles with classes. Use these classes to opt into their customized displays for a more consistent rendering across browsers and devices.</p>
+<p>Be sure to use an appropriate type attribute on all inputs (e.g., email for email address or number for numerical information) to take advantage of newer input controls like email verification, number selection, and more.</p>
+<p>Here’s a quick example to demonstrate form styles. Keep reading for documentation on required classes, form layout, and more.</p>
+<form>
+    <div class="form-group">
+      <label for="exampleInputEmail1"><br>Email address<br></label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted"><br>We'll never share your email with anyone else.<br></small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1"><br>Password<br></label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  <pre>
+    &lt;form&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="exampleInputEmail1"&gt;Email address&lt;/label&gt;
+    &lt;input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"&gt;
+    &lt;small id="emailHelp" class="form-text text-muted"&gt;We'll never share your email with anyone else.&lt;/small&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="exampleInputPassword1"&gt;Password&lt;/label&gt;
+    &lt;input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"&gt;
+  &lt;/div&gt;
+  &lt;div class="form-check"&gt;
+    &lt;input type="checkbox" class="form-check-input" id="exampleCheck1"&gt;
+    &lt;label class="form-check-label" for="exampleCheck1"&gt;Check me out&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;button type="submit" class="btn btn-primary"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+  </pre>
+
+<h2>Form controls</h2>
+<p>Textual form controls—like input, select, and textarea—are styled with the .form-control class. Included are styles for general appearance, focus state, sizing, and more.</p>
+<p>Be sure to explore our custom forms to further style select.</p>
+
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Email address</label><br>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"><br>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Example select</label><br>
+    <select class="form-control1" id="exampleFormControlSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select><br>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect2">Example multiple select</label><br>
+    <select multiple class="form-control1" id="exampleFormControlSelect2">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select><br>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Example textarea</label><br>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+</form>
+
+
+
+<pre>
+  
+  &lt;form&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="exampleFormControlInput1"&gt;Email address&lt;/label&gt;
+    &lt;input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="exampleFormControlSelect1"&gt;Example select&lt;/label&gt;
+    &lt;select class="form-control" id="exampleFormControlSelect1"&gt;
+      &lt;option&gt;1&lt;/option&gt;
+      &lt;option&gt;2&lt;/option&gt;
+      &lt;option&gt;3&lt;/option&gt;
+      &lt;option&gt;4&lt;/option&gt;
+      &lt;option&gt;5&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="exampleFormControlSelect2"&gt;Example multiple select&lt;/label&gt;
+    &lt;select multiple class="form-control" id="exampleFormControlSelect2"&gt;
+      &lt;option&gt;1&lt;/option&gt;
+      &lt;option&gt;2&lt;/option&gt;
+      &lt;option&gt;3&lt;/option&gt;
+      &lt;option&gt;4&lt;/option&gt;
+      &lt;option&gt;5&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="exampleFormControlTextarea1"&gt;Example textarea&lt;/label&gt;
+    &lt;textarea class="form-control" id="exampleFormControlTextarea1" rows="3"&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+
+<p>For file inputs, swap the .form-control for .form-control-file.</p>
+
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Example file input</label><br>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+  </div>
+</form>
+
+<pre>&lt;form&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="exampleFormControlFile1"&gt;Example file input&lt;/label&gt;
+    &lt;input type="file" class="form-control-file" id="exampleFormControlFile1"&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</pre>
+
+<h2>Sizing</h2>
+<p>Set heights using classes like .form-control-lg and .form-control-sm.</p>
+
+<input class="form-control form-control-lg" type="text" placeholder=".form-control-lg">
+<input class="form-control" type="text" placeholder="Default input">
+<input class="form-control form-control-sm" type="text" placeholder=".form-control-sm">
+
+<pre>
+&lt;input class="form-control form-control-lg" type="text" placeholder=".form-control-lg"&gt;<br>
+&lt;input class="form-control" type="text" placeholder="Default input"&gt;<br>
+&lt;input class="form-control form-control-sm" type="text" placeholder=".form-control-sm"&gt;
+</pre>
+
+<h2>Readonly</h2>
+<p>Add the readonly boolean attribute on an input to prevent modification of the input’s value. Read-only inputs appear lighter (just like disabled inputs), but retain the standard cursor.</p>
+<input class="form-control" type="text" placeholder="Readonly input here…" readonly>
+<pre>
+  &lt;input class="form-control" type="text" placeholder="Readonly input here…" readonly&gt;
+</pre>
+
+
+<h2>Checkboxes and radios</h2>
+<p>Default checkboxes and radios are improved upon with the help of .form-check, a single class for both input types that improves the layout and behavior of their HTML elements. Checkboxes are for selecting one or several options in a list, while radios are for selecting one option from many.</p>
+<p>Disabled checkboxes and radios are supported, but to provide a not-allowed cursor on hover of the parent label, you’ll need to add the disabled attribute to the .form-check-input. The disabled attribute will apply a lighter color to help indicate the input’s state.</p>
+<p>Checkboxes and radios use are built to support HTML-based form validation and provide concise, accessible labels. As such, our  input and label are sibling elements as opposed to an input within a label. This is slightly more verbose as you must specify id and for attributes to relate the input and label.</p>
+<h2>Default (stacked)</h2>
+<p>By default, any number of checkboxes and radios that are immediate sibling will be vertically stacked and appropriately spaced with .form-check.</p>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  <label class="form-check-label" for="defaultCheck1">
+    Default checkbox
+  </label>
+</div><br>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+  <label class="form-check-label" for="defaultCheck2">
+    Disabled checkbox
+  </label>
+</div>
+
+<pre>
+  &lt;div class="form-check"&gt;
+  &lt;input class="form-check-input" type="checkbox" value="" id="defaultCheck1"&gt;
+  &lt;label class="form-check-label" for="defaultCheck1"&gt;
+    Default checkbox
+  &lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="form-check"&gt;
+  &lt;input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled&gt;
+  &lt;label class="form-check-label" for="defaultCheck2"&gt;
+    Disabled checkbox
+  &lt;/label&gt;
+&lt;/div&gt;
+</pre>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+  <label class="form-check-label" for="exampleRadios1">
+    Default radio
+  </label>
+</div><br>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+  <label class="form-check-label" for="exampleRadios2">
+    Second default radio
+  </label>
+</div><br>
+<div class="form-check disabled">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+  <label class="form-check-label" for="exampleRadios3">
+    Disabled radio
+  </label>
+</div>
+
+<pre>
+  &lt;div class="form-check"&gt;
+  &lt;input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked&gt;
+  &lt;label class="form-check-label" for="exampleRadios1"&gt;
+    Default radio
+  &lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="form-check"&gt;
+  &lt;input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2"&gt;
+  &lt;label class="form-check-label" for="exampleRadios2"&gt;
+    Second default radio
+  &lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="form-check disabled"&gt;
+  &lt;input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled&gt;
+  &lt;label class="form-check-label" for="exampleRadios3"&gt;
+    Disabled radio
+  &lt;/label&gt;
+&lt;/div&gt;
+</pre>
+
+<h2>Inline</h2>
+<p>Group checkboxes or radios on the same horizontal row by adding .form-check-inline to any .form-check.</p>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+  <label class="form-check-label" for="inlineCheckbox1">1</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+  <label class="form-check-label" for="inlineCheckbox2">2</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+  <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+</div>
+
+
+<pre>
+  &lt;div class="form-check form-check-inline"&gt;
+  &lt;input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"&gt;
+  &lt;label class="form-check-label" for="inlineCheckbox1"&gt;1&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="form-check form-check-inline"&gt;
+  &lt;input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"&gt;
+  &lt;label class="form-check-label" for="inlineCheckbox2"&gt;2&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="form-check form-check-inline"&gt;
+  &lt;input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled&gt;
+  &lt;label class="form-check-label" for="inlineCheckbox3"&gt;3 (disabled)&lt;/label&gt;
+&lt;/div&gt;
+</pre>
+
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+  <label class="form-check-label" for="inlineRadio1">1</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">2</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
+  <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+</div>
+
+
+<pre>
+  &lt;div class="form-check form-check-inline"&gt;
+  &lt;input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"&gt;
+  &lt;label class="form-check-label" for="inlineRadio1"&gt;1&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="form-check form-check-inline"&gt;
+  &lt;input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"&gt;
+  &lt;label class="form-check-label" for="inlineRadio2"&gt;2&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="form-check form-check-inline"&gt;
+  &lt;input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled&gt;
+  &lt;label class="form-check-label" for="inlineRadio3"&gt;3 (disabled)&lt;/label&gt;
+&lt;/div&gt;
+</pre>
+
+<h2>Without labels</h2>
+<p>Add .position-static to inputs within .form-check that don’t have any label text. Remember to still provide some form of label for assistive technologies (for instance, using aria-label).</p>
+
+<div class="form-check">
+  <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+</div>
+<div class="form-check">
+  <input class="form-check-input position-static" type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="...">
+</div>
+
+<Pre>
+  &lt;div class="form-check"&gt;
+  &lt;input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="..."&gt;
+&lt;/div&gt;
+&lt;div class="form-check"&gt;
+  &lt;input class="form-check-input position-static" type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="..."&gt;
+&lt;/div&gt;
+</Pre>
+
+
+<h2>Form groups</h2>
+<p>The .form-group class is the easiest way to add some structure to forms. It provides a flexible class that encourages proper grouping of labels, controls, optional help text, and form validation messaging. By default it only applies margin-bottom, but it picks up additional styles in .form-inline as needed. Use it with fieldset, div, or nearly any other element.</p>
+<form>
+  <div class="form-group">
+    <label for="formGroupExampleInput">Example label</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+  </div><br>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Another label</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+  </div>
+</form>
+
+<pre>
+  &lt;form&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="formGroupExampleInput"&gt;Example label&lt;/label&gt;
+    &lt;input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input"&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="formGroupExampleInput2"&gt;Another label&lt;/label&gt;
+    &lt;input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+
+<h2>Form grid</h2>
+<p>More complex forms can be built using our grid classes. Use these for form layouts that require multiple columns, varied widths, and additional alignment options.</p>
+<form>
+  <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="First name">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Last name">
+    </div>
+  </div>
+</form>
+
+
+<pre>
+  &lt;form&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col"&gt;
+      &lt;input type="text" class="form-control" placeholder="First name"&gt;
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+      &lt;input type="text" class="form-control" placeholder="Last name"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+
+<h2>Form row</h2>
+<p>You may also swap .row for .form-row, a variation of our standard grid row that overrides the default column gutters for tighter and more compact layouts.</p>
+<form>
+  <div class="form-row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="First name">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Last name">
+    </div>
+  </div>
+</form>
+
+<pre>&lt;form&gt;
+  &lt;div class="form-row"&gt;
+    &lt;div class="col"&gt;
+      &lt;input type="text" class="form-control" placeholder="First name"&gt;
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+      &lt;input type="text" class="form-control" placeholder="Last name"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</pre>
+
+<p>More complex layouts can also be created with the grid system.</p>
+
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Password</label>
+      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Address 2</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Sign in</button>
+</form>
+
+<pre>
+  &lt;form&gt;
+  &lt;div class="form-row"&gt;
+    &lt;div class="form-group col-md-6"&gt;
+      &lt;label for="inputEmail4"&gt;Email&lt;/label&gt;
+      &lt;input type="email" class="form-control" id="inputEmail4" placeholder="Email"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group col-md-6"&gt;
+      &lt;label for="inputPassword4"&gt;Password&lt;/label&gt;
+      &lt;input type="password" class="form-control" id="inputPassword4" placeholder="Password"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="inputAddress"&gt;Address&lt;/label&gt;
+    &lt;input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="inputAddress2"&gt;Address 2&lt;/label&gt;
+    &lt;input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"&gt;
+  &lt;/div&gt;
+  &lt;div class="form-row"&gt;
+    &lt;div class="form-group col-md-6"&gt;
+      &lt;label for="inputCity"&gt;City&lt;/label&gt;
+      &lt;input type="text" class="form-control" id="inputCity"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group col-md-4"&gt;
+      &lt;label for="inputState"&gt;State&lt;/label&gt;
+      &lt;select id="inputState" class="form-control"&gt;
+        &lt;option selected&gt;Choose...&lt;/option&gt;
+        &lt;option&gt;...&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group col-md-2"&gt;
+      &lt;label for="inputZip"&gt;Zip&lt;/label&gt;
+      &lt;input type="text" class="form-control" id="inputZip"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;div class="form-check"&gt;
+      &lt;input class="form-check-input" type="checkbox" id="gridCheck"&gt;
+      &lt;label class="form-check-label" for="gridCheck"&gt;
+        Check me out
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button type="submit" class="btn btn-primary"&gt;Sign in&lt;/button&gt;
+&lt;/form&gt;
+</pre>
+
+<h2>Horizontal form</h2>
+<p>Create horizontal forms with the grid by adding the .row class to form groups and using the .col-*-* classes to specify the width of your labels and controls. Be sure to add .col-form-label to your label as well so they’re vertically centered with their associated form controls.
+
+  At times, you maybe need to use margin or padding utilities to create that perfect alignment you need. For example, we’ve removed the padding-top on our stacked radio inputs label to better align the text baseline.</p>
+
+  <form>
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+      </div>
+    </div>
+    <fieldset class="form-group">
+      <div class="row">
+        <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+            <label class="form-check-label" for="gridRadios1">
+              First radio
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+            <label class="form-check-label" for="gridRadios2">
+              Second radio
+            </label>
+          </div>
+          <div class="form-check disabled">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+            <label class="form-check-label" for="gridRadios3">
+              Third disabled radio
+            </label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <div class="form-group row">
+      <div class="col-sm-2">Checkbox</div>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck1">
+          <label class="form-check-label" for="gridCheck1">
+            Example checkbox
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </div>
+    </div>
+  </form>
+
+  <pre>
+    &lt;form&gt;
+  &lt;div class="form-group row"&gt;
+    &lt;label for="inputEmail3" class="col-sm-2 col-form-label"&gt;Email&lt;/label&gt;
+    &lt;div class="col-sm-10"&gt;
+      &lt;input type="email" class="form-control" id="inputEmail3" placeholder="Email"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group row"&gt;
+    &lt;label for="inputPassword3" class="col-sm-2 col-form-label"&gt;Password&lt;/label&gt;
+    &lt;div class="col-sm-10"&gt;
+      &lt;input type="password" class="form-control" id="inputPassword3" placeholder="Password"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;fieldset class="form-group"&gt;
+    &lt;div class="row"&gt;
+      &lt;legend class="col-form-label col-sm-2 pt-0"&gt;Radios&lt;/legend&gt;
+      &lt;div class="col-sm-10"&gt;
+        &lt;div class="form-check"&gt;
+          &lt;input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked&gt;
+          &lt;label class="form-check-label" for="gridRadios1"&gt;
+            First radio
+          &lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class="form-check"&gt;
+          &lt;input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2"&gt;
+          &lt;label class="form-check-label" for="gridRadios2"&gt;
+            Second radio
+          &lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class="form-check disabled"&gt;
+          &lt;input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled&gt;
+          &lt;label class="form-check-label" for="gridRadios3"&gt;
+            Third disabled radio
+          &lt;/label&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+  &lt;div class="form-group row"&gt;
+    &lt;div class="col-sm-2"&gt;Checkbox&lt;/div&gt;
+    &lt;div class="col-sm-10"&gt;
+      &lt;div class="form-check"&gt;
+        &lt;input class="form-check-input" type="checkbox" id="gridCheck1"&gt;
+        &lt;label class="form-check-label" for="gridCheck1"&gt;
+          Example checkbox
+        &lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group row"&gt;
+    &lt;div class="col-sm-10"&gt;
+      &lt;button type="submit" class="btn btn-primary"&gt;Sign in&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+  </pre>
+
+<h2>Inline forms</h2>
+<p>Use the .form-inline class to display a series of labels, form controls, and buttons on a single horizontal row. Form controls within inline forms vary slightly from their default states.</p>
+<form class="form-inline">
+  <label class="sr-only" for="inlineFormInputName2">Name</label>
+  <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Jane Doe">
+
+  <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+  <div class="input-group mb-2 mr-sm-2">
+    <div class="input-group-prepend">
+      <div class="input-group-text">@</div>
+    </div>
+    <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username">
+  </div>
+
+  <div class="form-check mb-2 mr-sm-2">
+    <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+    <label class="form-check-label" for="inlineFormCheck">
+      Remember me
+    </label>
+  </div>
+
+  <button type="submit" class="btn btn-primary mb-2">Submit</button>
+</form>
+
+<pre>
+  &lt;form class="form-inline"&gt;
+  &lt;label class="sr-only" for="inlineFormInputName2"&gt;Name&lt;/label&gt;
+  &lt;input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Jane Doe"&gt;
+
+  &lt;label class="sr-only" for="inlineFormInputGroupUsername2"&gt;Username&lt;/label&gt;
+  &lt;div class="input-group mb-2 mr-sm-2"&gt;
+    &lt;div class="input-group-prepend"&gt;
+      &lt;div class="input-group-text"&gt;@&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username"&gt;
+  &lt;/div&gt;
+
+  &lt;div class="form-check mb-2 mr-sm-2"&gt;
+    &lt;input class="form-check-input" type="checkbox" id="inlineFormCheck"&gt;
+    &lt;label class="form-check-label" for="inlineFormCheck"&gt;
+      Remember me
+    &lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;button type="submit" class="btn btn-primary mb-2"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+</pre>
+
+<h2>Help text</h2>
+<p>Block-level help text in forms can be created using .form-text (previously known as .help-block in v3). Inline help text can be flexibly implemented using any inline HTML element and utility classes like .text-muted.
+</p>
+<p>Help text should be explicitly associated with the form control it relates to using the aria-describedby attribute. This will ensure that assistive technologies—such as screen readers—will announce this help text when the user focuses or enters the control.
+
+  Help text below inputs can be styled with .form-text. This class includes display: block and adds some top margin for easy spacing from the inputs above.</p>
+  <label for="inputPassword5">Password</label>
+  <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+  <small id="passwordHelpBlock" class="form-text text-muted">
+    Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+  </small>
+
+  <pre>
+    &lt;label for="inputPassword5"&gt;Password&lt;/label&gt;
+&lt;input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"&gt;
+&lt;small id="passwordHelpBlock" class="form-text text-muted"&gt;
+  Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+&lt;/small&gt;
+  </pre>
+
+  <p>Inline text can use any typical inline HTML element (be it a small, span, or something else) with nothing more than a utility class.</p>
+  <form class="form-inline">
+    <div class="form-group">
+      <label for="inputPassword6">Password</label>
+      <input type="password" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
+      <small id="passwordHelpInline" class="text-muted">
+        Must be 8-20 characters long.
+      </small>
+    </div>
+  </form>
+
+  <pre>
+    &lt;form class="form-inline"&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="inputPassword6"&gt;Password&lt;/label&gt;
+    &lt;input type="password" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline"&gt;
+    &lt;small id="passwordHelpInline" class="text-muted"&gt;
+      Must be 8-20 characters long.
+    &lt;/small&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+  </pre>
+
+  <h2>Disabled forms</h2>
+  <p>Add the disabled boolean attribute on an input to prevent user interactions and make it appear lighter.</p>
+
+
+  <form>
+    <fieldset disabled>
+      <div class="form-group">
+        <label for="disabledTextInput">Disabled input</label>
+        <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+      </div>
+      <div class="form-group">
+        <label for="disabledSelect">Disabled select menu</label>
+        <select id="disabledSelect" class="form-control">
+          <option>Disabled select</option>
+        </select>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
+        <label class="form-check-label" for="disabledFieldsetCheck">
+          Can't check this
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </fieldset>
+  </form>
+
+  <pre>
+    &lt;form&gt;
+  &lt;fieldset disabled&gt;
+    &lt;div class="form-group"&gt;
+      &lt;label for="disabledTextInput"&gt;Disabled input&lt;/label&gt;
+      &lt;input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+      &lt;label for="disabledSelect"&gt;Disabled select menu&lt;/label&gt;
+      &lt;select id="disabledSelect" class="form-control"&gt;
+        &lt;option&gt;Disabled select&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;div class="form-check"&gt;
+      &lt;input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled&gt;
+      &lt;label class="form-check-label" for="disabledFieldsetCheck"&gt;
+        Can't check this
+      &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;button type="submit" class="btn btn-primary"&gt;Submit&lt;/button&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+  </pre>
+
+
+
+
+</div>
+  </body>
+</html>

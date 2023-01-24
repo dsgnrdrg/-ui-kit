@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Component Library/Buttons</title>
+    <link
+      href="C:\Users\lunin\OneDrive\Рабочий стол\css_example\style.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <style>
+    body {
+    font-family:Arial, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+    }
+  </style>
+  <body>
+
+    <!-- Side navigation -->
+<div class="menu">
+    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Поиск.." title="Введите категорию">
+
+    <ul id="myMenu">
+      <li><a href="index.html">Buttons</a></li>
+      <li><a href="index2.html">Forms</a></li>
+      <li><a href="#">Card</a></li>
+      <li><a href="#">Navs</a></li>
+      <li><a href="#">Progress</a></li>
+    </ul>
+  </div>
+    <script>
+      function myFunction() {
+        // Объявлять переменные
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("mySearch");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myMenu");
+        li = ul.getElementsByTagName("li");
+      
+        // Выполните цикл по всем элементам списка и скройте те, которые не соответствуют запросу поиска
+        for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+          } else {
+            li[i].style.display = "none";
+          }
+        }
+      }
+      </script>
+
+    <!-- topnav -->
+
+    <div class="topnav">
+      <a href="#home">Home</a>
+      <a href="#documentation">Documentation</a>
+      <a href="#examples">Examples</a>
+      <a href="#themes">Themes</a>
+    </div>
+
+    <!-- Page content -->
+
+    <div class="main">
+      <br />
+      <h1>Buttons</h1>
+      <h2><strong>Examples</strong></h2>
+      <p>
+        There are several predefined button styles,<br />
+        each serving its own semantic purpose, with a few extras thrown in for
+        more control.
+      </p>
+      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-secondary">Secondary</button>
+      <button type="button" class="btn btn-success">Success</button>
+      <button type="button" class="btn btn-danger">Danger</button>
+      <button type="button" class="btn btn-warning">Warning</button>
+      <button type="button" class="btn btn-info">Info</button>
+      <button type="button" class="btn btn-light">Light</button>
+      <button type="button" class="btn btn-dark">Dark</button>
+      <button type="button" class="btn btn-link">Link</button>
+
+<pre>
+&lt;button type="button" class="btn btn-primary"&gt;Primary&lt;/button&gt;
+&lt;button type="button" class="btn btn-secondary"&gt;Secondary&lt;/button&gt;
+&lt;button type="button" class="btn btn-success"&gt;Success&lt;/button&gt;
+&lt;button type="button" class="btn btn-danger"&gt;Danger&lt;/button&gt;
+&lt;button type="button" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+&lt;button type="button" class="btn btn-info"&gt;Info&lt;/button&gt;
+&lt;button type="button" class="btn btn-light"&gt;Light&lt;/button&gt;
+&lt;button type="button" class="btn btn-dark"&gt;Dark&lt;/button&gt;
+&lt;button type="button" class="btn btn-link"&gt;Link&lt;/button&gt;
+      </pre>
+      <h3>Conveying meaning to assistive technologies</h3>
+      <p>
+        Using color to add meaning only provides a visual indication, which will
+        not be conveyed to users of assistive technologies – such as screen
+        readers. Ensure that information denoted by the color is either obvious
+        from the content itself (e.g. the visible text), or is included through
+        alternative means, such as additional text hidden with the .sr-only
+        class.
+      </p>
+      <h2>Outline buttons</h2>
+      <p>
+        In need of a button, but not the hefty background colors they bring?
+        Replace the default modifier classes with the .btn-outline-* ones to
+        remove all background images and colors on any button.
+      </p>
+      <button type="button" class="btn btn-outline-primary">Primary</button>
+      <button type="button" class="btn btn-outline-secondary">Secondary</button>
+      <button type="button" class="btn btn-outline-success">Success</button>
+      <button type="button" class="btn btn-outline-danger">Danger</button>
+      <button type="button" class="btn btn-outline-warning">Warning</button>
+      <button type="button" class="btn btn-outline-info">Info</button>
+      <button type="button" class="btn btn-outline-dark">Dark</button>
+
+      <pre>
+&lt;button type="button" class="btn btn-outline-primary"&gt;Primary&lt;/button&gt;
+&lt;button type="button" class="btn btn-outline-secondary"&gt;Secondary&lt;/button&gt;
+&lt;button type="button" class="btn btn-outline-success"&gt;Success&lt;/button&gt;
+&lt;button type="button" class="btn btn-outline-danger"&gt;Danger&lt;/button&gt;
+&lt;button type="button" class="btn btn-outline-warning"&gt;Warning&lt;/button&gt;
+&lt;button type="button" class="btn btn-outline-info"&gt;Info&lt;/button&gt;
+&lt;button type="button" class="btn btn-outline-light"&gt;Light&lt;/button&gt;
+&lt;button type="button" class="btn btn-outline-dark"&gt;Dark&lt;/button&gt;
+      </pre>
+      <h2>Sizes</h2>
+      <p>
+        Fancy larger or smaller buttons? Add .btn-lg or .btn-sm for additional
+        sizes.
+      </p>
+
+      <button type="button" class="btn btn-primary btn-lg">Large button</button>
+      <button type="button" class="btn btn-secondary btn-lg">Large button</button>
+<pre>
+&lt;button type="button" class="btn btn-primary btn-lg"&gt;Large button&lt;/button&gt;
+&lt;button type="button" class="btn btn-secondary btn-lg"&gt;Large button&lt;/button&gt;
+</pre>
+      <br />
+
+      <button type="button" class="btn btn-primary btn-sm">Small button</button>
+      <button type="button" class="btn btn-secondary btn-sm">Small button</button>
+
+      <pre>
+&lt;button type="button" class="btn btn-primary btn-sm"&gt;Small button&lt;/button&gt;
+&lt;button type="button" class="btn btn-secondary btn-sm"&gt;Small button&lt;/button&gt;
+      </pre>
+      <p>
+        Create block level buttons—those that span the full width of a parent—by
+        adding .btn-block.
+      </p>
+
+      <button type="button" class="btn btn-primary btn-lg btn-block">
+        Block level button
+      </button>
+      <br />
+      <button type="button" class="btn btn-secondary btn-lg btn-block">
+        Block level button
+      </button>
+
+      <pre>
+&lt;button type="button" class="btn btn-primary btn-lg btn-block"&gt;Block level button&lt;/button&gt;
+&lt;button type="button" class="btn btn-secondary btn-lg btn-block"&gt;Block level button&lt;/button&gt;
+      </pre>
+
+      <h2>Disabled state</h2>
+      <p>Make buttons look inactive by adding the disabled boolean attribute to any button element.</p>
+
+<button type="button" class="btnDis btn-lg btn-primary" disabled>Primary button</button>
+<button type="button" class="btnDis btn-secondary btn-lg" disabled >Button</button>
+
+<pre>
+&lt;button type="button" class="btn btn-lg btn-primary" disabled&gt;Primary button&lt;/button&gt;
+&lt;button type="button" class="btn btn-secondary btn-lg" disabled&gt;Button&lt;/button&gt;
+</pre>
+    </div>
+  </body>
+</html>

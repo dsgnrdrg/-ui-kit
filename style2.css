@@ -1,0 +1,101 @@
+#mySearch {
+    font-size: 18px;
+    padding: 11px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    width: 130px;
+    position: fixed;
+  }
+  
+
+  #myMenu {
+    width: 200px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    margin-top: 70px;
+    overflow-y: scroll;
+  }
+  
+
+  #myMenu li a {
+    padding: 12px;
+    text-decoration: none;
+    color: black;
+    display: block
+  }
+  
+  #myMenu li a:hover {
+    background-color: #eee;
+  }
+  
+  .topnav {
+    z-index: 1;
+    background-color: #008080;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  
+  .topnav a {
+    float:left;
+    color: rgb(255, 253, 253);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    opacity: 0.5;
+  }
+  
+  .topnav a:hover {
+    background-color:#008080;
+    color:rgb(255, 253, 253) ;
+    transition: 0.3s;
+    opacity: 1;
+  }
+
+  .main {
+    margin-top: 50px;
+    margin-left: 220px;
+    margin-right: 300px;
+  }
+  
+  pre {
+    font-size: 15px;
+    border: 3px solid rgb(242, 243, 243); 
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgb(242, 243, 243);
+    overflow-y: scroll;
+  }
+  
+  .form-control {
+    width: 800px;
+    height: 25px;
+  }
+
+  .form-control:focus{
+    outline: none;
+  }
+  .form-control1{
+     width: 800px;
+  }
+  .form-control1{
+    outline: none;
+  }
+.btn.btn-primary {
+    border-radius: 10px;
+    outline: none;
+    width: 80px;
+    height: 30px;
+    border: 0;
+    background-color: rgb(71, 71, 71);
+    opacity: 0.8;
+    color: #ddd;
+  }
+  .btn.btn-primary:hover{
+    cursor: pointer;
+    opacity: 1;
+  }
